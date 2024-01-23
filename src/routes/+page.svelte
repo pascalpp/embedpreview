@@ -1,2 +1,23 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import type { PageData } from './$types';
+
+  export let data: PageData;
+
+  let { content } = data;
+</script>
+
+<!-- <textarea rows="10">{content}</textarea> -->
+
+{@html content}
+
+<style>
+  textarea {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 1rem;
+    font-family: monospace;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+</style>
